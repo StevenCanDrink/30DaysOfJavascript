@@ -61,3 +61,66 @@
 //   }
 // }
 // console.log()
+// var users = [
+//   {
+//     id: 1,
+//     name: ' Kiem Dam',
+//   },
+//   {
+//     id: 2,
+//     name: ' Son Dang',
+//   },
+//   {
+//     id: 3,
+//     name: ' Hung Dam',
+//   },
+// ];
+
+// var comments = [
+//   {
+//     id: 1,
+//     user_id: 1,
+//     content: 'Anh son chua ra video :(',
+//   },
+//   {
+//     id: 2,
+//     user_id: 2,
+//     content: 'Vua ra xong em oi',
+//   },
+// ];
+
+// function getcomments() {
+//   return new Promise((rs) => {
+//     setTimeout(() => rs(comments), 2000);
+//   });
+// }
+// function getusersbyid(userids) {
+//   return new Promise((rs) => {
+//     var result = users.filter((user) => {
+//       return userids.includes(user.id);
+//     });
+//     setTimeout(() => rs(result), 2000);
+//   });
+// }
+// getcomments()
+//   .then((comments) => {
+//     var userid = comments.map((vl) => vl.user_id);
+//     return getusersbyid(userid).then((users) => {
+//       return {
+//         users: users,
+//         comments: comments,
+//       };
+//     });
+//   })
+//   .then((data) => {
+//     console.log(data);
+//     var title = document.createElement('div');
+//     document.body.appendChild(title);
+//     var html = '';
+//     data.comments.forEach((comments) => {
+//       var user = data.users.find((user) => {
+//         return user.id === comments.user_id;
+//       });
+//       html += `<li>${user.name}:${comments.content}</li>`;
+//     });
+//   });
